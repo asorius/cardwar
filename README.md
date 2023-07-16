@@ -17,5 +17,5 @@
 	• get randomized deck
 		
 ### Person class:
-	• store card deck
+	• store deck 
 	• get top card
