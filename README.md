@@ -11,16 +11,11 @@
 	- Game ends when either of the players runs out of cards.
 
 ## Requirements:
-	
-### Cards class:
-	- store base card deck
-	- randomize deck
-		
-### Deck class:
-	- store randomized deck
-	- split deck
-			
-### Person class:
 
-	- store card deck
-	- get top card
+	### Deck class:
+		- store base deck
+		- get randomized deck
+			
+	### Person class:
+		- store card deck
+		- get top card
