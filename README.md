@@ -13,9 +13,9 @@
 ## Requirements:
 
 ### Deck class:
-	- store base deck
-	- get randomized deck
+	• store base deck
+	• get randomized deck
 		
 ### Person class:
-	- store card deck
-	- get top card
+	• store card deck
+	• get top card
