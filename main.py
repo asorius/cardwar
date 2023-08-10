@@ -12,7 +12,7 @@ def main():
 @dataclass
 class Card:
     name: str = ""
-    value: int = 0
+    value: int = 2
     suit: str = ""
 
     def __str__(self):
