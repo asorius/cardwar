@@ -6,7 +6,9 @@ import random
 
 
 def main():
-    print("start")
+    # deck = Deck().randomized_deck
+    player_one = Player(Deck().randomized_deck)
+    player_two = Player(Deck().randomized_deck)
 
 
 @dataclass
@@ -51,6 +53,17 @@ class Deck(Card):
         randomized_list = copy(self.base)
         random.shuffle(randomized_list)
         return randomized_list
+
+
+class Player:
+    def __init__(self, deck):
+        self.deck = deck
+
+    def get_card_from_top(self, amount: int):
+        deleted_items = []
+        for _ in range(amount):
+            deleted_items.append(self.deck.pop())
+        return deleted_items
 
 
 if __name__ == "__main__":
