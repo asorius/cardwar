@@ -9,6 +9,27 @@ def main():
     # deck = Deck().randomized_deck
     player_one = Player(Deck().randomized_deck)
     player_two = Player(Deck().randomized_deck)
+    while player_one.deck or player_two.deck:
+        player_one_card: Card = player_one.get_top_card()
+        player_two_card: Card = player_two.get_top_card()
+        print(f"Player one draws {player_one_card}")
+        print(f"Player two draws {player_two_card}")
+        if player_one_card.value == player_two_card.value:
+            print("War is on!")
+        elif player_one_card.value > player_two_card.value:
+            player_one.deck.append(player_two_card)
+            print(f"Player one gets {player_two_card}")
+        else:
+            player_two.deck.append(player_one_card)
+            print(f"Player two gets {player_one_card}")
+
+        if not player_one.deck:
+            print("Player one is out of cards. PLAYER TWO WINS")
+            break
+        if not player_two.deck:
+            print("Player two is out of cards. PLAYER ONE WINS")
+            break
+        input("Press enter to initiate next round")
 
 
 @dataclass
@@ -18,7 +39,7 @@ class Card:
     suit: str = ""
 
     def __str__(self):
-        return f"{self.value} of {self.name}"
+        return f"{self.name} of {self.suit}"
 
 
 class Deck(Card):
@@ -56,10 +77,14 @@ class Deck(Card):
 
 
 class Player:
-    def __init__(self, deck):
+    def __init__(self, deck: list[Card]):
         self.deck = deck
 
-    def get_card_from_top(self, amount: int):
+    def get_top_card(self):
+        print(len(self.deck))
+        return self.deck.pop()
+
+    def get_multiple_cards(self, amount: int):
         deleted_items = []
         for _ in range(amount):
             deleted_items.append(self.deck.pop())
