@@ -16,6 +16,6 @@
 	• store base deck
 	• get randomized deck
 		
-### Person class:
+### Player class:
 	• store deck 
 	• get top card
